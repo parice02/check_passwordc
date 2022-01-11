@@ -7,9 +7,9 @@ int main(int argc, char const *argv[])
 {
 	/* code */
 	char *password = NULL;
-
-	password = malloc(30 * sizeof(char));
-	char *reg = "^[a-zA-Z0-9#_@.-]{10,}$";
+	int length = 50 * sizeof(char);
+	password = malloc(length);
+	char *reg = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{10,}$";
 	regex_t re;
 	printf("Veuillez saisir votre mot de passe:\n");
 	fgets(password, 30 * sizeof(char), stdin);
